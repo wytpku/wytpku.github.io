@@ -1,0 +1,92 @@
+:root {
+  --text: #606c71;
+  --heading: #159957;
+  --link: #1e6bb8;
+  --line: #eff0f1;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff;
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-decoration: none; overflow-wrap: anywhere; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 2;
+  padding: 8px 16px;
+  color: #fff;
+  background: #155799;
+}
+.skip-link:focus { top: 16px; }
+
+.page-header {
+  padding: 48px 24px 44px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(120deg, #155799, #159957);
+}
+.page-header h1 { margin: 0; font-size: 40px; font-weight: 600; line-height: 1.4; }
+.page-header p { margin: 9px 0 0; font-size: 19px; opacity: 0.85; }
+
+.main-content {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 28px 96px 36px;
+}
+
+section { margin-top: 29px; }
+section:first-child { margin-top: 0; }
+h2 { margin: 0 0 15px; color: var(--heading); font-size: 25px; font-weight: 400; line-height: 1.6; }
+h2 span { font-size: 0.75em; margin-left: 10px; }
+p { margin: 0 0 16px; }
+.profile::after { content: ""; display: block; clear: both; }
+.portrait { float: right; width: 142px; height: auto; margin: 0 0 12px 30px; }
+ol, ul { padding-left: 26px; margin: 0 0 16px; }
+li + li { margin-top: 7px; }
+.project-list li + li { margin-top: 11px; }
+strong { color: #4e5b61; font-weight: 600; }
+.site-footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line); color: #819198; font-size: 13px; }
+.site-footer p { margin-bottom: 0; }
+
+@media (max-width: 1024px) {
+  .main-content { padding-inline: 48px; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; line-height: 1.85; }
+  .page-header { padding: 29px 20px 27px; }
+  .page-header h1 { font-size: 29px; }
+  .page-header p { font-size: 16px; margin-top: 5px; }
+  .main-content { padding: 24px 22px 28px; }
+  h2 { font-size: 22px; margin-bottom: 13px; }
+  h2 span { font-size: 14px; margin-left: 6px; }
+  .portrait { float: none; display: block; width: 120px; margin: 0 0 18px; }
+  section { margin-top: 25px; }
+  .site-footer { font-size: 12px; }
+}
+
+@media (max-width: 370px) {
+  h2 span { display: block; margin-left: 0; }
+}
+
+@media print {
+  .page-header { color: #155799; background: #fff; padding: 0 0 20px; }
+  .main-content { max-width: none; padding: 0; }
+  section { break-inside: avoid; }
+}
